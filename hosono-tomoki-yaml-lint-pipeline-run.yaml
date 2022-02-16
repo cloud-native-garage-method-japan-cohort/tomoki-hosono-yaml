@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: hosono-tomoki-yaml-lint-pipeline-run-
+spec:
+  pipelineRef:
+    name: hosono-tomoki-yaml-lint-pipeline
+  workspaces:
+    - name: pipeline-shared-data
+      persistentVolumeClaim:
+        claimName: hosono-tomoki-pvc
